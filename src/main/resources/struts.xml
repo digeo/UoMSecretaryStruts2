@@ -5,4 +5,5 @@
 
 <struts>
 	<include file="home.xml" />
+	<include file="secretary.xml" />
 </struts>
