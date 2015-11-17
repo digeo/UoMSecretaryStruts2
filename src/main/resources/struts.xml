@@ -6,4 +6,6 @@
 <struts>
 	<include file="home.xml" />
 	<include file="secretary.xml" />
+	<include file="professor.xml" />
+	<include file="student.xml" />
 </struts>
