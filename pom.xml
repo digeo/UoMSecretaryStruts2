@@ -9,6 +9,7 @@
 	<url>http://maven.apache.org</url>
 	<properties>
 		<org.apache.struts-version>2.5-BETA2</org.apache.struts-version>
+		<org.springframework-version>4.1.6.RELEASE</org.springframework-version>
 		<org.hibernate-version>4.3.11.Final</org.hibernate-version>
 		<mysql-verion>5.1.37</mysql-verion>
 		<commons-dbcp-verion>1.4</commons-dbcp-verion>
@@ -19,6 +20,20 @@
 			<groupId>org.apache.struts</groupId>
 			<artifactId>struts2-spring-plugin</artifactId>
 			<version>${org.apache.struts-version}</version>
+		</dependency>
+
+		<!-- Spring and Transactions -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+
+		<!-- Spring ORM support -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${org.springframework-version}</version>
 		</dependency>
 
 		<!-- Hibernate -->
