@@ -1,5 +1,10 @@
-<html>
-<body>
-<h2>Hello World!</h2>
-</body>
-</html>
+<%@ include file="header.jsp"%>
+
+<div class="jumbotron">
+
+	<div class="container">
+		<h1>Hello, world!</h1>
+	</div>
+</div>
+
+<%@ include file="footer.jsp"%>
