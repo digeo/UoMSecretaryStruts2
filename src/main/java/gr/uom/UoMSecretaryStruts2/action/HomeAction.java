@@ -5,6 +5,8 @@ package gr.uom.UoMSecretaryStruts2.action;
 
 import java.util.List;
 
+import org.springframework.security.core.context.SecurityContextHolder;
+
 import com.opensymphony.xwork2.ActionSupport;
 
 import gr.uom.UoMSecretaryStruts2.domain.Lesson;
@@ -39,6 +41,12 @@ public class HomeAction extends ActionSupport {
 
 	public String secretaries() throws Exception {
 		this.setSecretaries(userDetailsService.findByRole("ROLE_SECRETARY"));
+		return SUCCESS;
+	}
+
+	public String myAccount() throws Exception {
+		String username = SecurityContextHolder.getContext().getAuthentication().getName();
+		this.setUserDetails(userDetailsService.findByUsername(username));
 		return SUCCESS;
 	}
 
