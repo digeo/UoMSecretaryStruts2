@@ -40,21 +40,15 @@
 			role="button">Edit my details</a> <a class="btn btn-default"
 			href="${pageContext.request.contextPath}/myAccount/changePassword"
 			role="button">Change my Password</a>
-
+			
 <%-- 		<sec:authorize access="hasRole('ROLE_SECRETARY')"> --%>
-<!-- 			<a class="btn btn-default" -->
-<%-- 				href="${pageContext.request.contextPath}/secretary" role="button">My --%>
-<!-- 				admin panel</a> -->
+<%-- 			<a class="btn btn-default" href="${pageContext.request.contextPath}/secretary" role="button">My admin panel</a> --%>
 <%-- 		</sec:authorize> --%>
 <%-- 		<sec:authorize access="hasRole('ROLE_PROFESSOR')"> --%>
-<!-- 			<a class="btn btn-default" -->
-<%-- 				href="${pageContext.request.contextPath}/professor" role="button">My --%>
-<!-- 				admin panel</a> -->
+<%-- 			<a class="btn btn-default" href="${pageContext.request.contextPath}/professor" role="button">My admin panel</a> --%>
 <%-- 		</sec:authorize> --%>
 <%-- 		<sec:authorize access="hasRole('ROLE_STUDENT')"> --%>
-<!-- 			<a class="btn btn-default" -->
-<%-- 				href="${pageContext.request.contextPath}/student" role="button">My --%>
-<!-- 				admin panel</a> -->
+<%-- 			<a class="btn btn-default" href="${pageContext.request.contextPath}/student" role="button">My admin panel</a> --%>
 <%-- 		</sec:authorize> --%>
 	</p>
 </div>
