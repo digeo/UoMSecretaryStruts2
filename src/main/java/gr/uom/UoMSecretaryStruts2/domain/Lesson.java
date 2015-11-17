@@ -35,7 +35,9 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Lesson.findBySemester", query = "SELECT l FROM Lesson l WHERE l.semester = :semester"),
     @NamedQuery(name = "Lesson.findByNotTeachProfessor", query = "SELECT l FROM Lesson l WHERE l.id NOT IN (SELECT p.professorTeachesLessonsPK.lessonId FROM ProfessorTeachesLessons p WHERE p.professorTeachesLessonsPK.professor = :professor)"),
 	@NamedQuery(name = "Lesson.findByTeachProfessor", query = "SELECT l FROM Lesson l WHERE l.id IN (SELECT p.professorTeachesLessonsPK.lessonId FROM ProfessorTeachesLessons p WHERE p.professorTeachesLessonsPK.professor = :professor)"),
-	@NamedQuery(name = "Lesson.findByIds", query = "SELECT l FROM Lesson l WHERE l.id IN :ids")})
+	@NamedQuery(name = "Lesson.findByIds", query = "SELECT l FROM Lesson l WHERE l.id IN :ids"),
+	@NamedQuery(name = "Lesson.findByNotEnrolledStudent", query = "SELECT l FROM Lesson l WHERE l.id NOT IN (SELECT s.studentEnrolledToLessonPK.lessonId FROM StudentEnrolledToLesson s WHERE s.studentEnrolledToLessonPK.student = :student)"),
+	@NamedQuery(name = "Lesson.findByEnrolledStudent", query = "SELECT l FROM Lesson l WHERE l.id IN (SELECT s.studentEnrolledToLessonPK.lessonId FROM StudentEnrolledToLesson s WHERE s.studentEnrolledToLessonPK.student = :student)")})
 public class Lesson implements Serializable {
 
     private static final long serialVersionUID = 1L;
