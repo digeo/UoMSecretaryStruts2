@@ -20,7 +20,8 @@
 	<bean id="lessonDAO" class="gr.uom.UoMSecretaryStruts2.dao.impl.LessonDaoImpl">
 		<property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
 	</bean>
-	<bean id="lessonService" class="gr.uom.UoMSecretaryStruts2.service.impl.LessonServiceImpl">
+	<bean id="lessonService"
+		class="gr.uom.UoMSecretaryStruts2.service.impl.LessonServiceImpl">
 		<property name="lessonDao" ref="lessonDAO" />
 	</bean>
 
@@ -34,7 +35,8 @@
 	<bean id="userDetailsDao" class="gr.uom.UoMSecretaryStruts2.dao.impl.UserDetailsDaoImpl">
 		<property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
 	</bean>
-	<bean id="userDetailsService" class="gr.uom.UoMSecretaryStruts2.service.impl.UserDetailsServiceImpl">
+	<bean id="userDetailsService"
+		class="gr.uom.UoMSecretaryStruts2.service.impl.UserDetailsServiceImpl">
 		<property name="userDetailsDao" ref="userDetailsDao" />
 	</bean>
 
@@ -60,6 +62,13 @@
 	<bean id="homeAction" class="gr.uom.UoMSecretaryStruts2.action.HomeAction">
 		<property name="lessonService" ref="lessonService" />
 		<property name="userDetailsService" ref="userDetailsService" />
+	</bean>
+
+	<bean id="secretaryAction" class="gr.uom.UoMSecretaryStruts2.action.SecretaryAction">
+		<property name="lessonService" ref="lessonService" />
+		<property name="userDetailsService" ref="userDetailsService" />
+		<property name="userService" ref="userService" />
+		<property name="professorTeachesLessonsService" ref="professorTeachesLessonsService" />
 	</bean>
 
 </beans>
