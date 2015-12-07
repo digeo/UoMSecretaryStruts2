@@ -62,6 +62,7 @@
 	<bean id="homeAction" class="gr.uom.UoMSecretaryStruts2.action.HomeAction">
 		<property name="lessonService" ref="lessonService" />
 		<property name="userDetailsService" ref="userDetailsService" />
+		<property name="userService" ref="userService" />
 	</bean>
 
 	<bean id="secretaryAction" class="gr.uom.UoMSecretaryStruts2.action.SecretaryAction">
