@@ -9,8 +9,9 @@
 		<intercept-url pattern="/secretary/**" access="hasRole('ROLE_SECRETARY')" />
 		<intercept-url pattern="/student/**" access="hasRole('ROLE_STUDENT')" />
 		<intercept-url pattern="/professor/**" access="hasRole('ROLE_PROFESSOR')" />
-		<csrf disabled="true" />
 		<form-login />
+		<logout logout-success-url="/" delete-cookies="JSESSIONID" />
+		<csrf />
 	</http>
 
 	<beans:import resource="database.xml" />
