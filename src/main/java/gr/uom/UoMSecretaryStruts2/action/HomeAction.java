@@ -10,9 +10,11 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import com.opensymphony.xwork2.ActionSupport;
 
 import gr.uom.UoMSecretaryStruts2.domain.Lesson;
+import gr.uom.UoMSecretaryStruts2.domain.User;
 import gr.uom.UoMSecretaryStruts2.domain.UserDetails;
 import gr.uom.UoMSecretaryStruts2.service.LessonService;
 import gr.uom.UoMSecretaryStruts2.service.UserDetailsService;
+import gr.uom.UoMSecretaryStruts2.service.UserService;
 
 /**
  * @author Georgios Digkas <mai153@uom.edu.gr>
@@ -24,10 +26,13 @@ public class HomeAction extends ActionSupport {
 	private LessonService lessonService;
 	private List<Lesson> lessons;
 
+	private UserService userService;
 	private UserDetailsService userDetailsService;
+	
 	private List<UserDetails> professors;
 	private List<UserDetails> secretaries;
 	private UserDetails userDetails;
+	private User user;
 
 	public String lessons() throws Exception {
 		this.setLessons(lessonService.findAll());
@@ -47,6 +52,34 @@ public class HomeAction extends ActionSupport {
 	public String myAccount() throws Exception {
 		String username = SecurityContextHolder.getContext().getAuthentication().getName();
 		this.setUserDetails(userDetailsService.findByUsername(username));
+		return SUCCESS;
+	}
+	
+	public String edit() {
+		String username = SecurityContextHolder.getContext().getAuthentication().getName();
+		this.setUserDetails(userDetailsService.findByUsername(username));
+		return SUCCESS;
+	}
+	
+	public String changePassword() {
+		String username = SecurityContextHolder.getContext().getAuthentication().getName();
+		this.setUser(userService.findByUsername(username));
+		return SUCCESS;
+	}
+	
+	//	STORE UPDATE
+	public String updateUser() {
+		User usr = userDetails.getUser();
+		userDetails.setUsername(usr.getUsername());
+		this.userDetailsService.update(userDetails);
+		this.userService.update(usr);
+		String username = SecurityContextHolder.getContext().getAuthentication().getName();
+		this.setUserDetails(userDetailsService.findByUsername(username));
+		return SUCCESS;
+	}
+	
+	public String updatePassword() {
+		this.userService.update(user);
 		return SUCCESS;
 	}
 
@@ -79,6 +112,18 @@ public class HomeAction extends ActionSupport {
 	}
 	public void setUserDetails(UserDetails userDetails) {
 		this.userDetails = userDetails;
+	}
+
+	public void setUserService(UserService userService) {
+		this.userService = userService;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public User getUser() {
+		return user;
 	}
 
 }

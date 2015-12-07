@@ -144,7 +144,7 @@ public class SecretaryAction extends ActionSupport {
 		this.setProfessors(userDetailsService.findByRole("ROLE_PROFESSOR"));
 		return SUCCESS;
 	}
-	
+
 	public String revokeLessons() {
 		List<Integer> checkedLsns = toIntegerList(checkedLessons);
 		List<ProfessorTeachesLessons> professorTeachesLessonsList = new ArrayList<ProfessorTeachesLessons>();
@@ -279,5 +279,5 @@ public class SecretaryAction extends ActionSupport {
 
 		return intArray;
 	}
-
+	//	Getters, Setters and toString omitted
 }
