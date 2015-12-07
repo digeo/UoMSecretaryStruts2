@@ -9,12 +9,24 @@
 	<url>http://maven.apache.org</url>
 	<properties>
 		<org.apache.struts-version>2.5-BETA2</org.apache.struts-version>
-		<org.springframework-version>4.1.6.RELEASE</org.springframework-version>
+		<org.springframework-version>4.2.3.RELEASE</org.springframework-version>
 		<org.springframework.security-version>4.0.3.RELEASE</org.springframework.security-version>
 		<org.hibernate-version>4.3.11.Final</org.hibernate-version>
 		<mysql-verion>5.1.37</mysql-verion>
 		<commons-dbcp-verion>1.4</commons-dbcp-verion>
 	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-framework-bom</artifactId>
+				<version>${org.springframework-version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 	<dependencies>
 		<dependency>
@@ -27,14 +39,12 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-tx</artifactId>
-			<version>${org.springframework-version}</version>
 		</dependency>
 
 		<!-- Spring ORM support -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-orm</artifactId>
-			<version>${org.springframework-version}</version>
 		</dependency>
 
 		<!-- Spring Security -->
@@ -63,7 +73,6 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-jdbc</artifactId>
-			<version>${org.springframework-version}</version>
 		</dependency>
 
 		<!-- Hibernate -->
