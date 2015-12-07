@@ -54,6 +54,17 @@
 						<li><a href="${pageContext.request.contextPath}/secretaries">Secretaries</a></li>
 						<li><a href="${pageContext.request.contextPath}/myAccount">My Account</a></li>
                     </ul>
+                    
+                                        <ul class="nav navbar-nav navbar-right">
+                        <sec:authorize access="isAuthenticated()">
+	                        <li>
+	                        	<c:url var="logoutUrl" value="/logout" />
+	                        	<form action="${logoutUrl}" method="post">
+	                        		<input class="btn btn-link" role="button" type="submit" value="Log out" /> <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+	                        	</form>
+	                        </li>
+                        </sec:authorize>
+                    </ul>
                 </div><!--/.nav-collapse -->
             </div>
         </nav>

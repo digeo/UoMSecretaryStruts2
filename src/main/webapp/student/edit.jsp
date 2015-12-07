@@ -10,7 +10,7 @@
 <body>
 	<s:form action="updateUser.action">
 		<s:textfield readonly="true" label="Username" name="userDetails.user.username" />
-		<s:password label="Password" name="userDetails.user.password" />
+		<s:hidden name="userDetails.user.password" />
 		<s:textfield label="Name" name="userDetails.name" />
 		<s:textfield label="Surname" name="userDetails.surname" />
 		<s:select label="Sex" list="#{'male':'Male', 'female':'Female'}" name="userDetails.sex" />
