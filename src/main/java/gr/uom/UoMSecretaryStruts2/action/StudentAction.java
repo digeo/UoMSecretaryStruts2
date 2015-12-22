@@ -1,6 +1,3 @@
-/**
- * 
- */
 package gr.uom.UoMSecretaryStruts2.action;
 
 import java.util.ArrayList;

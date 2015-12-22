@@ -1,6 +1,3 @@
-/**
- * 
- */
 package gr.uom.UoMSecretaryStruts2.dao;
 
 import java.util.List;

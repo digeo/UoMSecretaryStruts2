@@ -1,6 +1,3 @@
-/**
- * 
- */
 package gr.uom.UoMSecretaryStruts2.action;
 
 import java.util.ArrayList;
@@ -11,7 +8,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import com.opensymphony.xwork2.ActionSupport;
 
 import gr.uom.UoMSecretaryStruts2.domain.Lesson;
-import gr.uom.UoMSecretaryStruts2.domain.ProfessorTeachesLessons;
 import gr.uom.UoMSecretaryStruts2.domain.StudentEnrolledToLesson;
 import gr.uom.UoMSecretaryStruts2.domain.User;
 import gr.uom.UoMSecretaryStruts2.domain.UserDetails;

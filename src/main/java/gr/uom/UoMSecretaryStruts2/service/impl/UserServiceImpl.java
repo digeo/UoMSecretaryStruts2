@@ -1,6 +1,3 @@
-/**
- * 
- */
 package gr.uom.UoMSecretaryStruts2.service.impl;
 
 import java.util.List;

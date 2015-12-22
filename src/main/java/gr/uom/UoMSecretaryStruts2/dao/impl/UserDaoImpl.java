@@ -1,6 +1,3 @@
-/**
- * 
- */
 package gr.uom.UoMSecretaryStruts2.dao.impl;
 
 import java.util.List;
@@ -44,16 +41,14 @@ public class UserDaoImpl implements UserDao {
 	public List<User> findAll() {
 		Session session = this.sessionFactory.getCurrentSession();
 		Query query = session.getNamedQuery("User.findAll");
-		List<User> users = query.list();
-		return users;
+		return (List<User>) query.list();
 	}
 
 	public List<User> findByRole(String role) {
 		Session session = this.sessionFactory.getCurrentSession();
 		Query query = session.getNamedQuery("User.findByRole");
 		query.setString("role", role);
-		List<User> users = query.list();
-		return users;
+		return (List<User>) query.list();
 	}
 
 	public User findByUsername(String username) {

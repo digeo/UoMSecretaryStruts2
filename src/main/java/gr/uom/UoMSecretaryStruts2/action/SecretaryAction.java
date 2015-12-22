@@ -1,6 +1,3 @@
-/**
- * 
- */
 package gr.uom.UoMSecretaryStruts2.action;
 
 import java.util.ArrayList;
@@ -25,6 +22,8 @@ import gr.uom.UoMSecretaryStruts2.service.UserService;
  *
  */
 public class SecretaryAction extends ActionSupport {
+	private static final String ROLE_PROFESSOR = "ROLE_PROFESSOR";
+
 	private static final long serialVersionUID = 1L;
 
 	private LessonService lessonService;
@@ -56,7 +55,7 @@ public class SecretaryAction extends ActionSupport {
 	}
 
 	public String professors() {
-		this.setProfessors(userDetailsService.findByRole("ROLE_PROFESSOR"));
+		this.setProfessors(userDetailsService.findByRole(ROLE_PROFESSOR));
 		return SUCCESS;
 	}
 
@@ -134,7 +133,7 @@ public class SecretaryAction extends ActionSupport {
 		getProfessorTeachesLesson(professorTeachesLessonsList);
 
 		professorTeachesLessonsService.insert(professorTeachesLessonsList);
-		this.setProfessors(userDetailsService.findByRole("ROLE_PROFESSOR"));
+		this.setProfessors(userDetailsService.findByRole(ROLE_PROFESSOR));
 		return SUCCESS;
 	}
 
@@ -159,7 +158,7 @@ public class SecretaryAction extends ActionSupport {
 		getProfessorTeachesLesson(professorTeachesLessonsList);
 
 		professorTeachesLessonsService.delete(professorTeachesLessonsList);
-		this.setProfessors(userDetailsService.findByRole("ROLE_PROFESSOR"));
+		this.setProfessors(userDetailsService.findByRole(ROLE_PROFESSOR));
 		return SUCCESS;
 	}
 

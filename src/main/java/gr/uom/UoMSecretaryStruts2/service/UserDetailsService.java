@@ -1,6 +1,3 @@
-/**
- * 
- */
 package gr.uom.UoMSecretaryStruts2.service;
 
 import gr.uom.UoMSecretaryStruts2.dao.UserDetailsDao;
