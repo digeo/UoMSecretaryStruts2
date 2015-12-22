@@ -57,6 +57,7 @@ public class User implements Serializable {
     private Collection<ProfessorTeachesLessons> professorTeachesLessonsCollection;
 
     public User() {
+    	//Empty constructor for setting values
     }
 
     public User(String username) {

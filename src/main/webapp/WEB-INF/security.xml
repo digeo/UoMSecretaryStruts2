@@ -11,7 +11,7 @@
 		<intercept-url pattern="/professor/**" access="hasRole('ROLE_PROFESSOR')" />
 		<form-login />
 		<logout logout-success-url="/" delete-cookies="JSESSIONID" />
-		<csrf />
+		<csrf disabled="true" />
 	</http>
 
 	<beans:import resource="database.xml" />

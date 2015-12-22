@@ -21,6 +21,10 @@ import gr.uom.UoMSecretaryStruts2.service.UserService;
  *
  */
 public class HomeAction extends ActionSupport {
+	private static final String ROLE_SECRETARY = "ROLE_SECRETARY";
+
+	private static final String ROLE_PROFESSOR = "ROLE_PROFESSOR";
+
 	private static final long serialVersionUID = 1L;
 
 	private LessonService lessonService;
@@ -34,22 +38,22 @@ public class HomeAction extends ActionSupport {
 	private UserDetails userDetails;
 	private User user;
 
-	public String lessons() throws Exception {
+	public String lessons() {
 		this.setLessons(lessonService.findAll());
 		return SUCCESS;
 	}
 
-	public String professors() throws Exception {
-		this.setProfessors(userDetailsService.findByRole("ROLE_PROFESSOR"));
+	public String professors() {
+		this.setProfessors(userDetailsService.findByRole(ROLE_PROFESSOR));
 		return SUCCESS;
 	}
 
-	public String secretaries() throws Exception {
-		this.setSecretaries(userDetailsService.findByRole("ROLE_SECRETARY"));
+	public String secretaries() {
+		this.setSecretaries(userDetailsService.findByRole(ROLE_SECRETARY));
 		return SUCCESS;
 	}
 
-	public String myAccount() throws Exception {
+	public String myAccount() {
 		String username = SecurityContextHolder.getContext().getAuthentication().getName();
 		this.setUserDetails(userDetailsService.findByUsername(username));
 		return SUCCESS;

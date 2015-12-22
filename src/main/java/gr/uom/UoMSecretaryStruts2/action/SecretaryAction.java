@@ -125,41 +125,38 @@ public class SecretaryAction extends ActionSupport {
 	}
 
 	public String assignLessons() {
-		List<Integer> checkedLsns = toIntegerList(checkedLessons);
-		List<ProfessorTeachesLessons> professorTeachesLessonsList = new ArrayList<ProfessorTeachesLessons>();
+		List<Integer> checkedLsns = toIntegerList();
+		List<ProfessorTeachesLessons> professorTeachesLessonsList = new ArrayList<>();
 
 		this.setUser(userService.findByUsername(getUsername()));
 		this.setLessons(lessonService.findByIds(checkedLsns));
 
-		for (Lesson lesson : lessons) {
-			ProfessorTeachesLessons professorTeachesLesson = new ProfessorTeachesLessons(getUser().getUsername(), lesson.getId());
-			professorTeachesLesson.setProfessorTeachesLessonsPK(new ProfessorTeachesLessonsPK(getUser().getUsername(), lesson.getId()));
-			professorTeachesLesson.setLesson(lesson);
-			professorTeachesLesson.setUser(getUser());
-			professorTeachesLesson.setStartedFrom(new Date());
-			professorTeachesLessonsList.add(professorTeachesLesson);
-		}
+		getProfessorTeachesLesson(professorTeachesLessonsList);
 
 		professorTeachesLessonsService.insert(professorTeachesLessonsList);
 		this.setProfessors(userDetailsService.findByRole("ROLE_PROFESSOR"));
 		return SUCCESS;
 	}
 
-	public String revokeLessons() {
-		List<Integer> checkedLsns = toIntegerList(checkedLessons);
-		List<ProfessorTeachesLessons> professorTeachesLessonsList = new ArrayList<ProfessorTeachesLessons>();
-
-		this.setUser(userService.findByUsername(getUsername()));
-		this.setLessons(lessonService.findByIds(checkedLsns));
-
-		for (Lesson lesson : lessons) {
-			ProfessorTeachesLessons professorTeachesLesson = new ProfessorTeachesLessons(getUser().getUsername(), lesson.getId());
-			professorTeachesLesson.setProfessorTeachesLessonsPK(new ProfessorTeachesLessonsPK(getUser().getUsername(), lesson.getId()));
-			professorTeachesLesson.setLesson(lesson);
+	private void getProfessorTeachesLesson(List<ProfessorTeachesLessons> professorTeachesLessonsList) {
+		for (Lesson l : lessons) {
+			ProfessorTeachesLessons professorTeachesLesson = new ProfessorTeachesLessons(getUser().getUsername(), l.getId());
+			professorTeachesLesson.setProfessorTeachesLessonsPK(new ProfessorTeachesLessonsPK(getUser().getUsername(), l.getId()));
+			professorTeachesLesson.setLesson(l);
 			professorTeachesLesson.setUser(getUser());
 			professorTeachesLesson.setStartedFrom(new Date());
 			professorTeachesLessonsList.add(professorTeachesLesson);
 		}
+	}
+
+	public String revokeLessons() {
+		List<Integer> checkedLsns = toIntegerList();
+		List<ProfessorTeachesLessons> professorTeachesLessonsList = new ArrayList<>();
+
+		this.setUser(userService.findByUsername(getUsername()));
+		this.setLessons(lessonService.findByIds(checkedLsns));
+
+		getProfessorTeachesLesson(professorTeachesLessonsList);
 
 		professorTeachesLessonsService.delete(professorTeachesLessonsList);
 		this.setProfessors(userDetailsService.findByRole("ROLE_PROFESSOR"));
@@ -270,8 +267,8 @@ public class SecretaryAction extends ActionSupport {
 		this.professorTeachesLessonsService = professorTeachesLessonsService;
 	}
 
-	private List<Integer> toIntegerList(String string) {
-		List<Integer> intArray = new ArrayList<Integer>();
+	private List<Integer> toIntegerList() {
+		List<Integer> intArray = new ArrayList<>();
 		List<String> tmpArray = Arrays.asList(checkedLessons.split(",\\s*"));
 
 		for (String string2 : tmpArray) 

@@ -31,7 +31,6 @@ public class ProfessorAction extends ActionSupport {
 	private UserService userService;
 	private UserDetailsService userDetailsService;
 	private StudentEnrolledToLessonService studentEnrolledToLessonService;
-	private ProfessorTeachesLessons professorTeachesLessons;
 
 	private UserDetails userDetails;
 	private int lessonId;
@@ -60,7 +59,7 @@ public class ProfessorAction extends ActionSupport {
 	public String setGrades() {
 
 		this.setStudentsEnrolledToLessonList(studentEnrolledToLessonService.findByLessonId(lessonId));
-		if (this.getStudentsEnrolledToLessonList().size() > 0)
+		if (this.getStudentsEnrolledToLessonList().isEmpty())
 			return SUCCESS;
 		return NONE;
 	}
@@ -77,7 +76,7 @@ public class ProfessorAction extends ActionSupport {
 	}
 
 	public String updateGradesToStudents() {
-		List<StudentEnrolledToLesson> updateGradesList = new ArrayList<StudentEnrolledToLesson>();
+		List<StudentEnrolledToLesson> updateGradesList = new ArrayList<>();
 		studentsEnrolledToLessonList = this.getStudentsEnrolledToLessonList();
 
 		for (StudentEnrolledToLesson studentEnrolledToLesson : studentsEnrolledToLessonList)
@@ -107,9 +106,6 @@ public class ProfessorAction extends ActionSupport {
 	}
 	public void setUserDetails(UserDetails userDetails) {
 		this.userDetails = userDetails;
-	}
-	public void setProfessorTeachesLessons(ProfessorTeachesLessons professorTeachesLessons) {
-		this.professorTeachesLessons = professorTeachesLessons;
 	}
 	public List<Lesson> getLessons() {
 		return lessons;

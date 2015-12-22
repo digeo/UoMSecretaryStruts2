@@ -83,8 +83,8 @@ public class StudentAction extends ActionSupport {
 	}
 
 	public String updateEnrolledLessons() {
-		List<Integer> checkedLsns = toIntegerList(checkedLessons);
-		List<StudentEnrolledToLesson> studentEnrolledToNewLessonsList = new ArrayList<StudentEnrolledToLesson>();
+		List<Integer> checkedLsns = toIntegerList();
+		List<StudentEnrolledToLesson> studentEnrolledToNewLessonsList = new ArrayList<>();
 		String username = SecurityContextHolder.getContext().getAuthentication().getName();
 		this.setUser(userService.findByUsername(username));
 		this.setLessons(lessonService.findByIds(checkedLsns));
@@ -102,8 +102,8 @@ public class StudentAction extends ActionSupport {
 	}
 
 	public String updateDisenrolledLessons() {
-		List<Integer> checkedLsns = toIntegerList(checkedLessons);
-		List<StudentEnrolledToLesson> studentEnrolledToNewLessonsList = new ArrayList<StudentEnrolledToLesson>();
+		List<Integer> checkedLsns = toIntegerList();
+		List<StudentEnrolledToLesson> studentEnrolledToNewLessonsList = new ArrayList<>();
 		String username = SecurityContextHolder.getContext().getAuthentication().getName();
 		this.setUser(userService.findByUsername(username));
 		this.setLessons(lessonService.findByIds(checkedLsns));
@@ -116,8 +116,8 @@ public class StudentAction extends ActionSupport {
 		return SUCCESS;
 	}
 
-	private List<Integer> toIntegerList(String string) {
-		List<Integer> intArray = new ArrayList<Integer>();
+	private List<Integer> toIntegerList() {
+		List<Integer> intArray = new ArrayList<>();
 		List<String> tmpArray = Arrays.asList(checkedLessons.split(",\\s*"));
 
 		for (String string2 : tmpArray) 
