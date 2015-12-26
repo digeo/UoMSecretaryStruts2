@@ -1,6 +1,6 @@
-package gr.uom.UoMSecretaryStruts2.service;
+package gr.uom.uomsecretarystruts2.service;
 
-import gr.uom.UoMSecretaryStruts2.dao.UserDao;
+import gr.uom.uomsecretarystruts2.dao.UserDao;
 
 /**
  * @author Georgios Digkas <mai153@uom.edu.gr>

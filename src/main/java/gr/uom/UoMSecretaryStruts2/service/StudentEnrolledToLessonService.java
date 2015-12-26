@@ -1,6 +1,6 @@
-package gr.uom.UoMSecretaryStruts2.service;
+package gr.uom.uomsecretarystruts2.service;
 
-import gr.uom.UoMSecretaryStruts2.dao.StudentEnrolledToLessonDao;
+import gr.uom.uomsecretarystruts2.dao.StudentEnrolledToLessonDao;
 
 /**
  * @author Georgios Digkas <mai153@uom.edu.gr>

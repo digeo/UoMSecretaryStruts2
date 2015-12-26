@@ -1,4 +1,4 @@
-package gr.uom.UoMSecretaryStruts2.service.impl;
+package gr.uom.uomsecretarystruts2.service.impl;
 
 import java.util.List;
 
@@ -6,9 +6,9 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
-import gr.uom.UoMSecretaryStruts2.dao.StudentEnrolledToLessonDao;
-import gr.uom.UoMSecretaryStruts2.domain.StudentEnrolledToLesson;
-import gr.uom.UoMSecretaryStruts2.service.StudentEnrolledToLessonService;
+import gr.uom.uomsecretarystruts2.dao.StudentEnrolledToLessonDao;
+import gr.uom.uomsecretarystruts2.domain.StudentEnrolledToLesson;
+import gr.uom.uomsecretarystruts2.service.StudentEnrolledToLessonService;
 
 /**
  * @author Georgios Digkas <mai153@uom.edu.gr>

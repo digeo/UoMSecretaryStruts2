@@ -8,15 +8,15 @@
 		<action name="index">
 			<result>/index.jsp</result>
 		</action>
-		<action name="updateUser" class="gr.uom.UoMSecretaryStruts2.action.HomeAction"
+		<action name="updateUser" class="gr.uom.uomsecretarystruts2.action.HomeAction"
 			method="updateUser">
 			<result name="success">/myAccount.jsp</result>
 		</action>
-		<action name="updatePassword" class="gr.uom.UoMSecretaryStruts2.action.HomeAction"
+		<action name="updatePassword" class="gr.uom.uomsecretarystruts2.action.HomeAction"
 			method="updatePassword">
 			<result name="success">/myAccount.jsp</result>
 		</action>
-		<action name="*" class="gr.uom.UoMSecretaryStruts2.action.HomeAction"
+		<action name="*" class="gr.uom.uomsecretarystruts2.action.HomeAction"
 			method="{1}">
 			<result name="success">/{1}.jsp</result>
 		</action>

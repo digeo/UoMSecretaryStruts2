@@ -17,55 +17,55 @@
 		<property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
 	</bean>
 
-	<bean id="lessonDAO" class="gr.uom.UoMSecretaryStruts2.dao.impl.LessonDaoImpl">
+	<bean id="lessonDAO" class="gr.uom.uomsecretarystruts2.dao.impl.LessonDaoImpl">
 		<property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
 	</bean>
 	<bean id="lessonService"
-		class="gr.uom.UoMSecretaryStruts2.service.impl.LessonServiceImpl">
+		class="gr.uom.uomsecretarystruts2.service.impl.LessonServiceImpl">
 		<property name="lessonDao" ref="lessonDAO" />
 	</bean>
 
-	<bean id="userDao" class="gr.uom.UoMSecretaryStruts2.dao.impl.UserDaoImpl">
+	<bean id="userDao" class="gr.uom.uomsecretarystruts2.dao.impl.UserDaoImpl">
 		<property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
 	</bean>
-	<bean id="userService" class="gr.uom.UoMSecretaryStruts2.service.impl.UserServiceImpl">
+	<bean id="userService" class="gr.uom.uomsecretarystruts2.service.impl.UserServiceImpl">
 		<property name="userDao" ref="userDao" />
 	</bean>
 
-	<bean id="userDetailsDao" class="gr.uom.UoMSecretaryStruts2.dao.impl.UserDetailsDaoImpl">
+	<bean id="userDetailsDao" class="gr.uom.uomsecretarystruts2.dao.impl.UserDetailsDaoImpl">
 		<property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
 	</bean>
 	<bean id="userDetailsService"
-		class="gr.uom.UoMSecretaryStruts2.service.impl.UserDetailsServiceImpl">
+		class="gr.uom.uomsecretarystruts2.service.impl.UserDetailsServiceImpl">
 		<property name="userDetailsDao" ref="userDetailsDao" />
 	</bean>
 
 	<bean id="professorTeachesLessonsDao"
-		class="gr.uom.UoMSecretaryStruts2.dao.impl.ProfessorTeachesLessonsDaoImpl">
+		class="gr.uom.uomsecretarystruts2.dao.impl.ProfessorTeachesLessonsDaoImpl">
 		<property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
 	</bean>
 	<bean id="professorTeachesLessonsService"
-		class="gr.uom.UoMSecretaryStruts2.service.impl.ProfessorTeachesLessonsServiceImpl">
+		class="gr.uom.uomsecretarystruts2.service.impl.ProfessorTeachesLessonsServiceImpl">
 		<property name="professorTeachesLessonsDao" ref="professorTeachesLessonsDao" />
 	</bean>
 
 	<bean id="studentEnrolledToLessonDao"
-		class="gr.uom.UoMSecretaryStruts2.dao.impl.StudentEnrolledToLessonDaoImpl">
+		class="gr.uom.uomsecretarystruts2.dao.impl.StudentEnrolledToLessonDaoImpl">
 		<property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
 	</bean>
 	<bean id="studentEnrolledToLessonService"
-		class="gr.uom.UoMSecretaryStruts2.service.impl.StudentEnrolledToLessonServiceImpl">
+		class="gr.uom.uomsecretarystruts2.service.impl.StudentEnrolledToLessonServiceImpl">
 		<property name="studentEnrolledToLessonDao" ref="studentEnrolledToLessonDao" />
 	</bean>
 
 	<!-- Struts 2 Actions -->
-	<bean id="homeAction" class="gr.uom.UoMSecretaryStruts2.action.HomeAction">
+	<bean id="homeAction" class="gr.uom.uomsecretarystruts2.action.HomeAction">
 		<property name="lessonService" ref="lessonService" />
 		<property name="userDetailsService" ref="userDetailsService" />
 		<property name="userService" ref="userService" />
 	</bean>
 
-	<bean id="secretaryAction" class="gr.uom.UoMSecretaryStruts2.action.SecretaryAction">
+	<bean id="secretaryAction" class="gr.uom.uomsecretarystruts2.action.SecretaryAction">
 		<property name="lessonService" ref="lessonService" />
 		<property name="userDetailsService" ref="userDetailsService" />
 		<property name="userService" ref="userService" />

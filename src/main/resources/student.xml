@@ -6,27 +6,27 @@
 <struts>
 
 	<package name="student" namespace="/student" extends="struts-default">
-		<action name="" class="gr.uom.UoMSecretaryStruts2.action.StudentAction"
+		<action name="" class="gr.uom.uomsecretarystruts2.action.StudentAction"
 			method="home">
 			<result name="success">/student/home.jsp</result>
 		</action>
 
-		<action name="updateUser" class="gr.uom.UoMSecretaryStruts2.action.StudentAction"
+		<action name="updateUser" class="gr.uom.uomsecretarystruts2.action.StudentAction"
 			method="updateUser">
 			<result name="success">/student/home.jsp</result>
 		</action>
 
-		<action name="updateEnrolledLessons" class="gr.uom.UoMSecretaryStruts2.action.StudentAction"
+		<action name="updateEnrolledLessons" class="gr.uom.uomsecretarystruts2.action.StudentAction"
 			method="updateEnrolledLessons">
 			<result name="success">/student/home.jsp</result>
 		</action>
 
-		<action name="updateDisenrolledLessons" class="gr.uom.UoMSecretaryStruts2.action.StudentAction"
+		<action name="updateDisenrolledLessons" class="gr.uom.uomsecretarystruts2.action.StudentAction"
 			method="updateDisenrolledLessons">
 			<result name="success">/student/home.jsp</result>
 		</action>
 
-		<action name="*" class="gr.uom.UoMSecretaryStruts2.action.StudentAction"
+		<action name="*" class="gr.uom.uomsecretarystruts2.action.StudentAction"
 			method="{1}">
 			<result name="success">/student/{1}.jsp</result>
 		</action>

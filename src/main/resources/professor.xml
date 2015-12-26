@@ -7,22 +7,22 @@
 
 	<package name="professor" namespace="/professor" extends="struts-default">
 		<action name=""
-			class="gr.uom.UoMSecretaryStruts2.action.ProfessorAction" method="home">
+			class="gr.uom.uomsecretarystruts2.action.ProfessorAction" method="home">
 			<result name="success">/professor/home.jsp</result>
 		</action>
 
 		<action name="updateUser"
-			class="gr.uom.UoMSecretaryStruts2.action.ProfessorAction" method="updateUser">
+			class="gr.uom.uomsecretarystruts2.action.ProfessorAction" method="updateUser">
 			<result name="success">/professor/home.jsp</result>
 		</action>
 
 		<action name="updateGradesToStudents"
-			class="gr.uom.UoMSecretaryStruts2.action.ProfessorAction" method="updateGradesToStudents">
+			class="gr.uom.uomsecretarystruts2.action.ProfessorAction" method="updateGradesToStudents">
 			<result name="success">/professor/home.jsp</result>
 		</action>
 
 		<action name="*"
-			class="gr.uom.UoMSecretaryStruts2.action.ProfessorAction" method="{1}">
+			class="gr.uom.uomsecretarystruts2.action.ProfessorAction" method="{1}">
 			<result name="success">/professor/{1}.jsp</result>
 			<result name="none">/professor/noStudents.jsp</result>
 		</action>

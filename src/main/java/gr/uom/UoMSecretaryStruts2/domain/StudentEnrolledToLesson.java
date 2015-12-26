@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gr.uom.UoMSecretaryStruts2.domain;
+package gr.uom.uomsecretarystruts2.domain;
 
 import java.io.Serializable;
 import javax.persistence.Column;
@@ -110,7 +110,7 @@ public class StudentEnrolledToLesson implements Serializable {
 
 	@Override
 	public String toString() {
-		return "gr.uom.UoMSecretaryStruts2.domain.StudentEnrolledToLesson[ studentEnrolledToLessonPK=" + studentEnrolledToLessonPK + " ]";
+		return "gr.uom.uomsecretarystruts2.domain.StudentEnrolledToLesson[ studentEnrolledToLessonPK=" + studentEnrolledToLessonPK + " ]";
 	}
 
 }

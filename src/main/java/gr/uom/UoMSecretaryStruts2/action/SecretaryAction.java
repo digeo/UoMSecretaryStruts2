@@ -1,4 +1,4 @@
-package gr.uom.UoMSecretaryStruts2.action;
+package gr.uom.uomsecretarystruts2.action;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -7,15 +7,15 @@ import java.util.List;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-import gr.uom.UoMSecretaryStruts2.domain.Lesson;
-import gr.uom.UoMSecretaryStruts2.domain.ProfessorTeachesLessons;
-import gr.uom.UoMSecretaryStruts2.domain.ProfessorTeachesLessonsPK;
-import gr.uom.UoMSecretaryStruts2.domain.User;
-import gr.uom.UoMSecretaryStruts2.domain.UserDetails;
-import gr.uom.UoMSecretaryStruts2.service.LessonService;
-import gr.uom.UoMSecretaryStruts2.service.ProfessorTeachesLessonsService;
-import gr.uom.UoMSecretaryStruts2.service.UserDetailsService;
-import gr.uom.UoMSecretaryStruts2.service.UserService;
+import gr.uom.uomsecretarystruts2.domain.Lesson;
+import gr.uom.uomsecretarystruts2.domain.ProfessorTeachesLessons;
+import gr.uom.uomsecretarystruts2.domain.ProfessorTeachesLessonsPK;
+import gr.uom.uomsecretarystruts2.domain.User;
+import gr.uom.uomsecretarystruts2.domain.UserDetails;
+import gr.uom.uomsecretarystruts2.service.LessonService;
+import gr.uom.uomsecretarystruts2.service.ProfessorTeachesLessonsService;
+import gr.uom.uomsecretarystruts2.service.UserDetailsService;
+import gr.uom.uomsecretarystruts2.service.UserService;
 
 /**
  * @author Georgios Digkas <mai153@uom.edu.gr>

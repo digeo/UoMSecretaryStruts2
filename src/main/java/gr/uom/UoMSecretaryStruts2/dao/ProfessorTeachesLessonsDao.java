@@ -1,8 +1,8 @@
-package gr.uom.UoMSecretaryStruts2.dao;
+package gr.uom.uomsecretarystruts2.dao;
 
 import java.util.List;
 
-import gr.uom.UoMSecretaryStruts2.domain.ProfessorTeachesLessons;
+import gr.uom.uomsecretarystruts2.domain.ProfessorTeachesLessons;
 
 /**
  * @author Georgios Digkas <mai153@uom.edu.gr>

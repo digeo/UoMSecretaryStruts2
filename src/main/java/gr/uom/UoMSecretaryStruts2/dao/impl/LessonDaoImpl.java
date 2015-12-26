@@ -1,4 +1,4 @@
-package gr.uom.UoMSecretaryStruts2.dao.impl;
+package gr.uom.uomsecretarystruts2.dao.impl;
 
 import java.util.List;
 
@@ -8,8 +8,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
 
-import gr.uom.UoMSecretaryStruts2.dao.LessonDao;
-import gr.uom.UoMSecretaryStruts2.domain.Lesson;
+import gr.uom.uomsecretarystruts2.dao.LessonDao;
+import gr.uom.uomsecretarystruts2.domain.Lesson;
 
 /**
  * @author Georgios Digkas <mai153@uom.edu.gr>

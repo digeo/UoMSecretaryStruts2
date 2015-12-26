@@ -1,4 +1,4 @@
-package gr.uom.UoMSecretaryStruts2.service.impl;
+package gr.uom.uomsecretarystruts2.service.impl;
 
 import java.util.List;
 
@@ -6,9 +6,9 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
-import gr.uom.UoMSecretaryStruts2.dao.UserDetailsDao;
-import gr.uom.UoMSecretaryStruts2.domain.UserDetails;
-import gr.uom.UoMSecretaryStruts2.service.UserDetailsService;
+import gr.uom.uomsecretarystruts2.dao.UserDetailsDao;
+import gr.uom.uomsecretarystruts2.domain.UserDetails;
+import gr.uom.uomsecretarystruts2.service.UserDetailsService;
 
 /**
  * @author Georgios Digkas <mai153@uom.edu.gr>
